@@ -20,7 +20,7 @@ requirements = read_multiline_as_list("requirements.txt")
 
 setuptools.setup(
     name="chan-url-lib",
-    version="1.0.0",
+    version="1.1.0",
     author="Nei Cardoso de Oliveira Neto",
     author_email="nei.neto@hotmail.com",
     description="Library to parse chan URLs.",
