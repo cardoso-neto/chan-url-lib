@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import pytest
+
 from chan_url_lib import ChanURI
 
 
@@ -8,3 +10,8 @@ def test_url():
     assert str(r) == "4chan.org/a/223061883"
     assert repr(r) == "ChanURI(chan='4chan.org', board='a', thread_id=223061883)"
     assert Path(r) == Path("4chan.org/a/223061883")
+
+
+def test_bad_url():
+    with pytest.raises(ValueError):
+        ChanURI.from_url("abcdefg")

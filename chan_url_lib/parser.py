@@ -19,6 +19,8 @@ class ChanURI:
     @classmethod
     def from_url(cls, url: str) -> ChanURI:
         match_ = re.match(cls.thread_url_regex, url)
+        if not match_:
+            raise ValueError
         chan = "4chan.org"
         board = match_.group("board")
         thread_id = match_.group("thread")
